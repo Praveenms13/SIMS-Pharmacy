@@ -1,0 +1,8 @@
+WorkSpaceConfiguration/
+vendor/
+composer.phar
+composer.lock
+composer.json
+.vscode/
+project/grunt/node_modules/
+project/grunt/package-lock.json
