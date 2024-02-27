@@ -404,18 +404,18 @@ class Toast {
 
   show() {
     var toast_template = `
-      <div class="toast" id="${this.id}" role="alert" aria-live="assertive" aria-atomic="true">
-        <div class="toast-header">
-            <img width="25px" src="https://img.icons8.com/color/48/pill.png" class="rounded me-2" alt="...">
-            <strong class="me-auto">${this.title}</strong>
-            <small class="text-body-secondary">${this.subtitle}</small>
-            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-        </div>
-        <div class="toast-body">
-            ${this.message}
-        </div>
-      </div>
-      `;
+  <div class="toast" id="${this.id}" role="alert" aria-live="assertive" aria-atomic="true" style="z-index: 2000">
+    <div class="toast-header">
+      <img width="25px" src="https://img.icons8.com/color/48/pill.png" class="rounded me-2" alt="...">
+      <strong class="me-auto">${this.title}</strong>
+      <small class="text-body-secondary">${this.subtitle}</small>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+      ${this.message}
+    </div>
+  </div>
+`;
     // ------------------------------------------------------------
     // $(`#toast_${this.options.placement }`).append(toast_template);
     // $(document.getElementById(`${this.id}`)).on("hidden.bs.toast", function () {
