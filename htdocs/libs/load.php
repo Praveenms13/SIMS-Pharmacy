@@ -1,17 +1,11 @@
 <?php
 
-//------------------------------------------------------------
-require $_SERVER['DOCUMENT_ROOT'] . '/../vendor/autoload.php';
 #TODO: Implement of autoload of class files => SPL Autoload Register can be used https://www.php.net/manual/en/function.spl-autoload-register.php
 include_once "_Includes/User.class.php";
 include_once "_Includes/Database.class.php";
 include_once "_Includes/Session.class.php";
 include_once "_Includes/UserSession.class.php";
 include_once "_Includes/WebAPI.class.php";
-include_once "_app/Post.class.php";
-include_once "_Includes/REST-API.class.php";
-include_once "_Includes/API.class.php";
-include_once "_app/Like.class.php";
 // include "_traits/SQLGetterSetter.trait.php";
 //------------------------------------------------------------
 //------------------------------------------------------------

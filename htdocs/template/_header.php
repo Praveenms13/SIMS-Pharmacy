@@ -13,13 +13,13 @@
         <div class="d-flex align-items-center justify-content-between">
           <div class="logo">
             <div class="site-logo">
-              <a href="index.html" class="js-logo-clone">Pharma</a>
+              <a href="index.html" class="js-logo-clone">SIMS</a>
             </div>
           </div>
           <div class="main-nav d-none d-lg-block">
             <nav class="site-navigation text-right text-md-center" role="navigation">
               <ul class="site-menu js-clone-nav d-none d-lg-block">
-                <li class="active"><a href="index.html">Home</a></li>
+                <li class="active"><a href="index.php">Home</a></li>
                 <li><a href="shop.html">Store</a></li>
                 <li class="has-children">
                   <a href="#">Dropdown</a>
@@ -36,11 +36,12 @@
                     </li>
                     <li><a href="#">Diet &amp; Nutrition</a></li>
                     <li><a href="#">Tea &amp; Coffee</a></li>
-                    
                   </ul>
                 </li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <?php if (Session::isAuthenticated()) { ?>
+                <li><a href="dashboard.php">Dashboard</a></li>
+                <?php } ?>
               </ul>
             </nav>
           </div>
