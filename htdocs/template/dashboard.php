@@ -21,7 +21,7 @@ $result = $conn->query($sql);
                 if ($result->num_rows > 0) {
                     $sr_no = 1;
                     // Output data of each row
-                    while($row = $result->fetch_assoc()) {
+                    while ($row = $result->fetch_assoc()) {
                 ?>
                         <tr>
                             <td><?php echo $sr_no++; ?></td>
