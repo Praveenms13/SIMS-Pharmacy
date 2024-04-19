@@ -3,7 +3,9 @@
     $('[data-toggle="tooltip"]').tooltip()
 })
 </script>
-<script src="../js/jquery-3.3.1.min.js"></script>
+<script src="/js/script.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.all.min.js"></script>
 <script src="../js/jquery-ui.js"></script>
 <script src="../js/popper.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>

@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="../css/owl.theme.default.min.css">
     <link rel="stylesheet" href="../css/aos.css">
     <link rel="stylesheet" href="../css/style.css">
+    
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Bona+Nova:wght@400;700&display=swap");
 .session-title {
