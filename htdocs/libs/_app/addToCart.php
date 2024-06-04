@@ -29,7 +29,7 @@ if (is_numeric($_POST['prodId'])) {
             echo "success";
         } else {
             $userid = Session::getUser()->getId();
-            $sql = "INSERT INTO cart (user_id, drug_name, price, quantity) VALUES ($userid, '$drug_name', $price, $quantity)";
+            $sql = "INSERT INTO cart (id, user_id, drug_name, price, quantity) VALUES ($id, $userid, '$drug_name', $price, $quantity)";
             $conn->query($sql);
             echo "success";
         }

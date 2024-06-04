@@ -1,4 +1,4 @@
-/* Developed By Praveen on Last Sync: 19/4/2024 @ 10:29:16*/
+/* Developed By Praveen on Last Sync: 4/6/2024 @ 13:51:21*/
 /*
 CryptoJS v3.1.2
 code.google.com/p/crypto-js
@@ -1081,6 +1081,7 @@ function addToCart(prodId) {
                     btn.innerHTML = 'Added to cart';
                     btn.setAttribute('disabled', 'disabled');
                     getCartCount();
+                    location.reload();
                 } else {
                     alert('Product not added to cart');
                 }

@@ -41,6 +41,7 @@ function addToCart(prodId) {
                     btn.innerHTML = 'Added to cart';
                     btn.setAttribute('disabled', 'disabled');
                     getCartCount();
+                    location.reload();
                 } else {
                     alert('Product not added to cart');
                 }
