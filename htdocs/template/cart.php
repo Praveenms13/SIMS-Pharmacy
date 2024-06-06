@@ -1,6 +1,6 @@
 <?php
 $conn = Database::getConnection();
-$sql = "SELECT * FROM cart";
+$sql = "SELECT * FROM cart WHERE user_id = " . Session::getUser()->getId(); 
 $result = $conn->query($sql);
 
 ?>

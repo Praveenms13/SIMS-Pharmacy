@@ -1,21 +1,20 @@
-// getcartCount on document ready
-$(document).ready(function () {
-    getCartCount();
-});
+// $(document).ready(function () {
+//     getCartCount();
+// });
 
-// get cart count
-function getCartCount() {
-    var siteUrl = window.location.origin;
-    var url = siteUrl + '/libs/_app/getCartCout.php';
-    $.get(url, function (response) {
-        $('#cart-count').html(response);
-    });
-}
+// function getCartCount() {
+//     let cartCount = document.getElementById("cart-count");
+//     fetch("/libs/_app/getCartCout.php")
+//       .then((response) => response.json())
+//       .then((data) => {
+//         cartCount.textContent = data;
+//       })
+//       .catch((error) => console.error("Error fetching cart count:", error));
+// }
 
 
 function addToCart(prodId) {
-    var siteUrl = window.location.origin;
-    var url = siteUrl + '/libs/_app/addToCart.php';
+    var url = '/libs/_app/addToCart.php';
     var data = {
         prodId: prodId
     };
@@ -40,7 +39,6 @@ function addToCart(prodId) {
                     var btn = document.getElementById('add-to-cart-' + prodId);
                     btn.innerHTML = 'Added to cart';
                     btn.setAttribute('disabled', 'disabled');
-                    getCartCount();
                     location.reload();
                 } else {
                     alert('Product not added to cart');

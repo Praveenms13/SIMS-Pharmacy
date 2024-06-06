@@ -1,6 +1,8 @@
 <?php
+
 // Assume you have a database connection in $conn
 $conn = Database::getConnection();
+
 // Get order ID from URL
 $order_id = isset($_GET['order_id']) ? $_GET['order_id'] : 0;
 
@@ -18,8 +20,13 @@ $stmt = $conn->prepare($orderItemsQuery);
 $stmt->bind_param("i", $order_id);
 $stmt->execute();
 $orderItemsResult = $stmt->get_result();
-?>
+$orderItems = [];  // Initialize the $orderItems array
+while ($row = $orderItemsResult->fetch_assoc()) {
+    $orderItems[] = $row;
+}
 
+// print_r($orderItems);
+?>
 
 <div class="container mt-5">
     <h2 class="mb-4">Thank You for Your Order!</h2>
@@ -44,7 +51,7 @@ $orderItemsResult = $stmt->get_result();
                     </thead>
                     <tbody>
                         <?php
-                        while($row = $orderItemsResult->fetch_assoc()) {
+                        foreach($orderItems as $row) {
                             echo "<tr>";
                             echo "<td>{$row['drug_name']}</td>";
                             echo "<td>{$row['price']}</td>";
@@ -58,5 +65,3 @@ $orderItemsResult = $stmt->get_result();
         </div>
     </div>
 </div>
-
-

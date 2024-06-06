@@ -47,13 +47,19 @@
       <div class="icons">
         <a href="#" class="icons-btn d-inline-block js-search-open"><span class="icon-search"></span></a>
         <?php
-        if (Session::isAuthenticated()) { ?>
+        if (Session::isAuthenticated()) { 
+            $userId = Session::getUser()->getId();
+            $conn = Database::getConnection();
+            $sql = "SELECT COUNT(*) as count FROM cart WHERE user_id = $userId";
+            $result = $conn->query($sql);
+            $row = $result->fetch_assoc();
+          ?>
           <a href="cart" class="icons-btn d-inline-block bag">
             <span class="icon-shopping-bag"></span>
-            <span class="number" id="cart-count"></span>
+            <span class="number" id="cart-count"><?php echo $row['count']; ?></span>
           </a>
           <a href="#" class="site-menu-toggle js-menu-toggle ml-3 d-inline-block d-lg-none"><span class="icon-menu"></span></a>
-          <a href="account" class="icons-btn d-inline-block person" type="button" data-toggle="tooltip" data-placement="top" title="<?php echo Session::getUser()->getUsername(); ?>">
+          <a href="account.php" class="icons-btn d-inline-block person" type="button" data-toggle="tooltip" data-placement="top" title="<?php echo Session::getUser()->getUsername(); ?>">
             <span class="icon-person"></span>
           </a>
           &nbsp;&nbsp;

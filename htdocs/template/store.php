@@ -26,7 +26,7 @@ $result = $conn->query($sql);
                         if ($result_->num_rows > 0) {
                             while($row2 = $result_->fetch_assoc()) {
                                 if ($id == $row2['id']) {
-                                    $text = "In Cart";
+                                    $text = "Added to Cart";
                                     $button = "<button type='button' class='primary addToCartBtn'>" . $text . "</button>";
                                 } 
                             }

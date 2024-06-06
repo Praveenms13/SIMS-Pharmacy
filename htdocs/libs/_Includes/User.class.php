@@ -179,6 +179,8 @@ try {
                     if ($result->num_rows == 1) {
                         $row_DB = $result->fetch_assoc();
                         if (password_verify($password, $row_DB['password'])) {
+                            // set the email to session
+                            $_SESSION['loggedInUseremail'] = $row_DB['email'];
                             return $row_DB; //return $row_DB['username'];
                         } else {
                             throw new Exception("Password is incorrect");
